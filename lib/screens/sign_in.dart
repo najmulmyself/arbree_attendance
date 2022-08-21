@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -11,22 +13,27 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  signIn() async {
-    http.post(
-      await Uri.parse(
-          'https://personal-attendance.herokuapp.com/api/v1.0/accounts/public/login/'),
+  late String? token;
+
+  final url =
+      'https://personal-attendance.herokuapp.com/api/v1.0/accounts/public/login/';
+  Future signIn() async {
+    print('sign in happpend');
+    final response = await http.post(
+      Uri.parse(url),
       body: {
         'email': 'admin@gmail.com',
         'password': '1qazZAQ!',
       },
-    ).then((value) {
-      print(value.body);
-      print(value.statusCode);
-    });
+    );
+    final jsonData = jsonDecode(response.body);
+    token = jsonData['data']['token'];
+    // print(jsonData['data']['access_token']);
   }
 
   @override
   Widget build(BuildContext context) {
+    print('token: $token');
     return Column(
       children: [
         Container(
@@ -103,7 +110,7 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                   onPressed: () {
-                    signIn;
+                    signIn();
                     print('pressed');
                   },
                   child: Text(
