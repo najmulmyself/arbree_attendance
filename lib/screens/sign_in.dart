@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignIn extends StatefulWidget {
   SignIn({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  late String? token;
+  String token = '';
 
   final url =
       'https://personal-attendance.herokuapp.com/api/v1.0/accounts/public/login/';
@@ -27,8 +28,30 @@ class _SignInState extends State<SignIn> {
       },
     );
     final jsonData = jsonDecode(response.body);
-    token = jsonData['data']['token'];
+    token = jsonData['data']['access_token'];
+
     // print(jsonData['data']['access_token']);
+    // print(token);
+    setData(token);
+  }
+
+  setData(token) async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('token', token);
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  getData() async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final gettoken = prefs.getString('token');
+      print(' token is from SharedP $gettoken');
+    } catch (e) {
+      print(e);
+    }
   }
 
   @override
@@ -36,10 +59,13 @@ class _SignInState extends State<SignIn> {
     print('token: $token');
     return Column(
       children: [
-        Container(
-          height: 150,
-          width: double.infinity,
-          color: Color(0xff0ABAB5),
+        GestureDetector(
+          onTap: getData,
+          child: Container(
+            height: 150,
+            width: double.infinity,
+            color: Color(0xff0ABAB5),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18.0),
