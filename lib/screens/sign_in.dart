@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class SignIn extends StatefulWidget {
   SignIn({Key? key}) : super(key: key);
@@ -10,6 +11,20 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  signIn() async {
+    http.post(
+      await Uri.parse(
+          'https://personal-attendance.herokuapp.com/api/v1.0/accounts/public/login/'),
+      body: {
+        'email': 'admin@gmail.com',
+        'password': '1qazZAQ!',
+      },
+    ).then((value) {
+      print(value.body);
+      print(value.statusCode);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,6 +46,7 @@ class _SignInState extends State<SignIn> {
                 style: TextStyle(fontSize: 25),
               ),
               TextFormField(
+                style: TextStyle(),
                 decoration: InputDecoration(
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
@@ -40,7 +56,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   labelText: 'Email',
                   labelStyle: TextStyle(
-                    color: Colors.black,
+                    color: Color(0xff0ABAB5),
                     fontSize: 20,
                   ),
                 ),
@@ -70,7 +86,7 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                   labelStyle: TextStyle(
-                    color: Colors.black,
+                    color: Color(0xff0ABAB5),
                     fontSize: 20,
                   ),
                 ),
@@ -87,6 +103,7 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                   onPressed: () {
+                    signIn;
                     print('pressed');
                   },
                   child: Text(
