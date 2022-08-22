@@ -29,6 +29,7 @@ class _SignInState extends State<SignIn> {
     );
     final jsonData = jsonDecode(response.body);
     token = jsonData['data']['access_token'];
+    // token will return a string
 
     // print(jsonData['data']['access_token']);
     // print(token);
