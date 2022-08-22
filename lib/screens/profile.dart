@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:arbree_attendance/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,18 +14,19 @@ class Profile extends StatelessWidget {
         token; // inital value will be empty string if it is null then occurs a problem accessing token
     final url =
         'https://personal-attendance.herokuapp.com/api/v1.0/accounts/user/profile/';
-    getUser() {
+    getUser(token) {
       print('Hello : $token');
       http.get(
         Uri.parse(url),
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          // 'HttpHeaders': 'Bearer $token',
-          'Authorization': base64Encode(utf8.encode('Bearer $token')),
+          'Authorization': 'Bearer $token',
         },
-      ).then((response) {
-        print('jdsfjlsdjf ${response.body}');
+      ).then((res) {
+        final response = jsonDecode(res.body);
+        print(res.body);
+        final data = Data.fromJson(response['data']);
+        print(data.email);
       });
     }
 
@@ -32,7 +34,7 @@ class Profile extends StatelessWidget {
       final prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
       print(' token is from SharedP getToken $token');
-      getUser();
+      getUser(token);
     }
 
     return Scaffold(
