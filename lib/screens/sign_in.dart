@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:arbree_attendance/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -14,7 +15,8 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  String token = '';
+  String token =
+      ''; // inital value will be empty string if it is null then occurs a problem accessing token
 
   final url =
       'https://personal-attendance.herokuapp.com/api/v1.0/accounts/public/login/';
@@ -49,7 +51,7 @@ class _SignInState extends State<SignIn> {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final gettoken = prefs.getString('token');
-      print(' token is from SharedP $gettoken');
+      // print(' token is from SharedP $gettoken');
     } catch (e) {
       print(e);
     }
@@ -57,7 +59,7 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    print('token: $token');
+    // print('token: $token');
     return Column(
       children: [
         GestureDetector(
@@ -137,8 +139,15 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                   onPressed: () {
+                   
                     signIn();
                     print('pressed');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Profile(),
+                      ),
+                    );
                   },
                   child: Text(
                     'Sign In',
