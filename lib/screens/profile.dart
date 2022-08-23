@@ -28,22 +28,24 @@ class _ProfileState extends State<Profile> {
       token; // inital value will be empty string if it is null then occurs a problem accessing token
   final url =
       'https://personal-attendance.herokuapp.com/api/v1.0/accounts/user/profile/';
-  getUser(token) {
+  getUser(token) async {
     print('Hello : $token');
-    http.get(
+    final response = await http.get(
       Uri.parse(url),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',
       },
-    ).then((res) {
-      final response = jsonDecode(res.body);
-      print('JsonD : ${response['data']['email']}');
-      print(res.body);
-      data = response['data'];
-      // final user = Data.fromJson(response['data']);
-      // print(user.email);
-    });
+    );
+    final decodeData = jsonDecode(response.body);
+    print('JsonD : ${decodeData['data']['email']}');
+    print(decodeData);
+    setState(
+      () {
+        data = decodeData['data'];
+      },
+    ); // final user = Data.fromJson(response['data']);
+    // print(user.email);
   }
 
   getToken() async {
@@ -55,12 +57,16 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Center(
-          child: Text('Hello'),
-        ),
-      ),
-    );
+    return data != null
+        ? Scaffold(
+            body: ListTile(
+            leading: Text('${data['id']}'),
+            title: Text('${data['first_name']}  ${data['last_name']}'),
+          ))
+        : Scaffold(
+          body: Center(
+              child: CircularProgressIndicator(),
+            ),
+        );
   }
 }
