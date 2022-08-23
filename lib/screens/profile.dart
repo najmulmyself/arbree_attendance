@@ -15,7 +15,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  var user;
+  dynamic data;
 
   @override
   void initState() {
@@ -38,9 +38,11 @@ class _ProfileState extends State<Profile> {
       },
     ).then((res) {
       final response = jsonDecode(res.body);
+      print('JsonD : ${response['data']['email']}');
       print(res.body);
-      final user = Data.fromJson(response['data']);
-      print(user.email);
+      data = response['data'];
+      // final user = Data.fromJson(response['data']);
+      // print(user.email);
     });
   }
 
@@ -56,7 +58,7 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       body: Container(
         child: Center(
-          child: Text('${user}'),
+          child: Text('Hello'),
         ),
       ),
     );
