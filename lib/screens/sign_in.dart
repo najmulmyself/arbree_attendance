@@ -3,6 +3,7 @@
 import 'dart:convert';
 
 import 'package:arbree_attendance/component/button.dart';
+import 'package:arbree_attendance/component/custom_textfield.dart';
 import 'package:arbree_attendance/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -87,63 +88,75 @@ class _SignInState extends State<SignIn> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              TextFormField(
-                style: TextStyle(),
-                decoration: InputDecoration(
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xff0ABAB5),
-                      width: 2,
-                    ),
-                  ),
-                  labelText: 'Email',
-                  labelStyle: TextStyle(
-                    color: Color(0xff0ABAB5),
-                    fontSize: 20,
-                  ),
-                ),
+              CustomTextField(
+                title: "Email",
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  suffixIcon: GestureDetector(
-                      onTap: () {
-                        print('pressed');
-                        setState(
-                          () {
-                            Icon(
-                              Icons.remove_red_eye,
-                              color: Colors.blue,
-                            );
-                          },
-                        );
-                        // }, child: Icon(Icons.visibility_off)),
-                      },
-                      child: Icon(
-                        Icons.remove_red_eye_rounded,
-                        color: Colors.grey,
-                      )),
-                  labelText: 'Password',
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xff0ABAB5),
-                      width: 2,
-                    ),
-                  ),
-                  labelStyle: TextStyle(
-                    color: Color(0xff0ABAB5),
-                    fontSize: 20,
-                  ),
-                ),
+              // TextFormField(
+              //   decoration: InputDecoration(
+              //     suffixIcon: GestureDetector(
+              //         onTap: () {
+              //           print('pressed');
+              //           setState(
+              //             () {
+              //               Icon(
+              //                 Icons.remove_red_eye,
+              //                 color: Colors.blue,
+              //               );
+              //             },
+              //           );
+              //           // }, child: Icon(Icons.visibility_off)),
+              //         },
+              //         child: Icon(
+              //           Icons.remove_red_eye_rounded,
+              //           color: Colors.grey,
+              //         )),
+              //     labelText: 'Password',
+              //     focusedBorder: UnderlineInputBorder(
+              //       borderSide: BorderSide(
+              //         color: Color(0xff0ABAB5),
+              //         width: 2,
+              //       ),
+              //     ),
+              //     labelStyle: TextStyle(
+              //       color: Color(0xff0ABAB5),
+              //       fontSize: 20,
+              //     ),
+              //   ),
+              // ),
+              CustomTextField(
+                title: 'Password',
+                suffixIcon: GestureDetector(
+                    onTap: () {
+                      print('pressed');
+                      setState(
+                        () {
+                          Icon(
+                            Icons.remove_red_eye,
+                            color: Colors.blue,
+                          );
+                        },
+                      );
+                      // }, child: Icon(Icons.visibility_off)),
+                    },
+                    child: Icon(
+                      Icons.remove_red_eye_rounded,
+                      color: Colors.grey,
+                    )),
               ),
               SizedBox(
                 height: 10,
               ),
               Align(
                   alignment: Alignment.bottomRight,
-                  child: Text(
-                    'Forgot password?',
-                    style: TextStyle(
-                      color: Color(0xff0ABAB5),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/forgetpass');
+                    },
+                    child: Text(
+                      'Forgot password?',
+                      style: TextStyle(
+                        color: Color(0xff0ABAB5),
+                      ),
                     ),
                   )),
               SizedBox(

@@ -1,3 +1,4 @@
+import 'package:arbree_attendance/screens/forget_pass.dart';
 import 'package:arbree_attendance/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,10 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: SignIn(),
       ),
+      routes: {
+        // '/' :(context) => SignIn(),
+        '/forgetpass': (context) => ForgetPass(),
+      },
     );
   }
 }
