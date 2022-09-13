@@ -165,14 +165,15 @@ class _SignInState extends State<SignIn> {
               Button(
                   title: 'Sign In',
                   onPressed: () {
-                    signIn();
-                    print('pressed');
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Profile(),
-                      ),
-                    );
+                    // signIn();
+                    // print('pressed');
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => Profile(),
+                    //   ),
+                    // );
+                    Navigator.pushNamed(context, '/clockIn');
                   }),
             ],
           ),

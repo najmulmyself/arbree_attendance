@@ -57,11 +57,16 @@ class ForgetPass extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Back to Sign In',
-                  style: TextStyle(
-                    color: Color(0xff0ABAB5),
-                    fontSize: 17,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    'Back to Sign In',
+                    style: TextStyle(
+                      color: Color(0xff0ABAB5),
+                      fontSize: 17,
+                    ),
                   ),
                 ),
               ],
