@@ -5,9 +5,14 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ClockInPage extends StatelessWidget {
+class ClockInPage extends StatefulWidget {
   const ClockInPage({Key? key}) : super(key: key);
 
+  @override
+  State<ClockInPage> createState() => _ClockInPageState();
+}
+
+class _ClockInPageState extends State<ClockInPage> {
   @override
   Widget build(BuildContext context) {
     List items = [
@@ -17,6 +22,26 @@ class ClockInPage extends StatelessWidget {
       'Shift 4',
     ];
     return Scaffold(
+      drawer: Drawer(
+          child: ListView(padding: EdgeInsets.zero, children: [
+        DrawerHeader(
+            child: Column(children: [
+          CircleAvatar(
+            radius: 40,
+            // backgroundImage: AssetImage('assets/images/user.png'),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'Ahmed Mohamed',
+            style: GoogleFonts.openSans(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ]))
+      ])),
       appBar: AppBar(
         // leading: Padding(
         //   padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 8),
@@ -26,9 +51,12 @@ class ClockInPage extends StatelessWidget {
         //     // size: 40,
         //   ),
         // ),
-        leading: Icon(
-          Icons.menu,
-          color: Colors.white,
+        leading: IconButton(
+          onPressed: Scaffold.of(context).openDrawer,
+          icon: Icon(
+            Icons.menu,
+            color: Colors.white,
+          ),
         ),
         title: Text(
           'Arbree Attendance',
@@ -60,11 +88,14 @@ class ClockInPage extends StatelessWidget {
                       )
                       .toList(),
                   onChanged: (value) {}),
-              Container(
-                child: SvgPicture.asset(
-                  'assets/images/clockin.svg',
-                  height: 200,
-                  width: 200,
+              GestureDetector(
+                onTap: null,
+                child: Container(
+                  child: SvgPicture.asset(
+                    'assets/images/clockin.svg',
+                    height: 200,
+                    width: 200,
+                  ),
                 ),
               ),
               Text(
@@ -77,9 +108,15 @@ class ClockInPage extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: FaIcon(FontAwesomeIcons.clock),
+                        child: FaIcon(FontAwesomeIcons.clock,
+                            color: Color(0xff0ABAB5)),
                       ),
-                      Text('start time'),
+                      Text(
+                        'start time',
+                        style: TextStyle(
+                          color: Color(0xff0ABAB5),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -89,9 +126,15 @@ class ClockInPage extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: FaIcon(FontAwesomeIcons.clock),
+                        child: FaIcon(
+                          FontAwesomeIcons.clock,
+                          color: Colors.red,
+                        ),
                       ),
-                      Text('end time'),
+                      Text(
+                        'end time',
+                        style: TextStyle(color: Colors.red),
+                      ),
                     ],
                   ),
                 ],
