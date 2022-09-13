@@ -162,16 +162,18 @@ class _SignInState extends State<SignIn> {
               SizedBox(
                 height: 80,
               ),
-              Button(onPressed: () {
-                signIn();
-                print('pressed');
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Profile(),
-                  ),
-                );
-              }),
+              Button(
+                  title: 'Sign In',
+                  onPressed: () {
+                    signIn();
+                    print('pressed');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Profile(),
+                      ),
+                    );
+                  }),
             ],
           ),
         ),

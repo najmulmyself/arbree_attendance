@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
+import 'package:arbree_attendance/component/button.dart';
 import 'package:flutter/material.dart';
 
 import '../component/custom_textfield.dart';
@@ -19,11 +22,47 @@ class ForgetPass extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
               children: [
-                Text('Forgot Password'),
+                SizedBox(
+                  height: 20,
+                ),
                 Text(
-                    'We will send you a password reset link to the email address you provided below'),
+                  'Forgot Password',
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Color(0xff0ABAB5),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'We will send you a password reset link to the email address you provided below',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.grey,
+                  ),
+                ),
                 CustomTextField(
                   title: 'Email',
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Button(
+                  onPressed: () {},
+                  title: 'Send Email',
+                  btnColor: Color(0xff374552),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'Back to Sign In',
+                  style: TextStyle(
+                    color: Color(0xff0ABAB5),
+                    fontSize: 17,
+                  ),
                 ),
               ],
             ),
