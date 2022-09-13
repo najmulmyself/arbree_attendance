@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'dart:convert';
 
@@ -58,15 +58,18 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return data != null
-        ? Scaffold(
-            body: ListTile(
-            leading: Text('${data['id']}'),
-            title: Text('${data['first_name']}  ${data['last_name']}'),
-          ))
+        ? SafeArea(
+            child: Scaffold(
+                body: ListTile(
+              leading: Text('${data['id']}'),
+              title: Text('${data['first_name']}  ${data['last_name']}'),
+              subtitle: Text('${data['email']}'),
+            )),
+          )
         : Scaffold(
-          body: Center(
+            body: Center(
               child: CircularProgressIndicator(),
             ),
-        );
+          );
   }
 }

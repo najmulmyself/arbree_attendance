@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'dart:convert';
 
+import 'package:arbree_attendance/component/button.dart';
 import 'package:arbree_attendance/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -51,7 +52,7 @@ class _SignInState extends State<SignIn> {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final gettoken = prefs.getString('token');
-      // print(' token is from SharedP $gettoken');
+      print(' token is from SharedP $gettoken');
     } catch (e) {
       print(e);
     }
@@ -60,7 +61,8 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     // print('token: $token');
-    return Column(
+    return ListView(
+      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
           onTap: getData,
@@ -79,7 +81,11 @@ class _SignInState extends State<SignIn> {
               ),
               Text(
                 'Sign In',
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Color(0xff0ABAB5),
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               TextFormField(
                 style: TextStyle(),
@@ -102,12 +108,14 @@ class _SignInState extends State<SignIn> {
                   suffixIcon: GestureDetector(
                       onTap: () {
                         print('pressed');
-                        setState(() {
-                          Icon(
-                            Icons.remove_red_eye,
-                            color: Colors.blue,
-                          );
-                        });
+                        setState(
+                          () {
+                            Icon(
+                              Icons.remove_red_eye,
+                              color: Colors.blue,
+                            );
+                          },
+                        );
                         // }, child: Icon(Icons.visibility_off)),
                       },
                       child: Icon(
@@ -128,38 +136,56 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
               SizedBox(
+                height: 10,
+              ),
+              Align(
+                  alignment: Alignment.bottomRight,
+                  child: Text(
+                    'Forgot password?',
+                    style: TextStyle(
+                      color: Color(0xff0ABAB5),
+                    ),
+                  )),
+              SizedBox(
                 height: 80,
               ),
-              Container(
-                height: 50,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      Color(0xff0ABAB5),
-                    ),
+              Button(onPressed: () {
+                signIn();
+                print('pressed');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Profile(),
                   ),
-                  onPressed: () {
-                   
-                    signIn();
-                    print('pressed');
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Profile(),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    'Sign In',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ),
+                );
+              }),
             ],
           ),
+        ),
+        SizedBox(
+          height: 50,
+        ),
+        Column(
+          children: [
+            Text(
+              'Company Registration',
+              style: TextStyle(
+                fontSize: 17,
+                color: Color(0xff0ABAB5),
+              ),
+            ),
+            Text(
+              'CLICK HERE',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Color(0xff0ABAB5),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 30,
         )
       ],
     );
