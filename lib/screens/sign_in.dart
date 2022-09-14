@@ -71,6 +71,7 @@ class _SignInState extends State<SignIn> {
             height: 150,
             width: double.infinity,
             color: Color(0xff0ABAB5),
+            child: Image.asset('assets/images/logo_aaa.png'),
           ),
         ),
         Padding(

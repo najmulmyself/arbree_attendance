@@ -17,6 +17,7 @@ class ForgetPass extends StatelessWidget {
             height: 150,
             width: double.infinity,
             color: Color(0xff0ABAB5),
+            child: Image.asset('assets/images/logo_aaa.png'),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
