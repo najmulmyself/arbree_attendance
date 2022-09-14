@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:arbree_attendance/component/drawer_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -23,31 +24,7 @@ class _ClockInPageState extends State<ClockInPage> {
     ];
     return Scaffold(
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    // backgroundImage: AssetImage('assets/images/user.png'),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Ahmed Mohamed',
-                    style: GoogleFonts.openSans(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+        child: DrawerContent(),
       ),
       appBar: AppBar(
         // leading: Padding(
@@ -156,3 +133,4 @@ class _ClockInPageState extends State<ClockInPage> {
     );
   }
 }
+
