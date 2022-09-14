@@ -23,25 +23,32 @@ class _ClockInPageState extends State<ClockInPage> {
     ];
     return Scaffold(
       drawer: Drawer(
-          child: ListView(padding: EdgeInsets.zero, children: [
-        DrawerHeader(
-            child: Column(children: [
-          CircleAvatar(
-            radius: 40,
-            // backgroundImage: AssetImage('assets/images/user.png'),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            'Ahmed Mohamed',
-            style: GoogleFonts.openSans(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ]))
-      ])),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    // backgroundImage: AssetImage('assets/images/user.png'),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Ahmed Mohamed',
+                    style: GoogleFonts.openSans(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         // leading: Padding(
         //   padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 8),
@@ -50,16 +57,17 @@ class _ClockInPageState extends State<ClockInPage> {
         //     color: Colors.white,
         //     // size: 40,
         //   ),
+        // // ),
+        // leading: IconButton(
+        //   onPressed: () {
+        //     Scaffold.of(context).openDrawer();
+        //   },
+        //   icon: Icon(
+        //     Icons.menu,
+        //     color: Colors.white,
+        //   ),
         // ),
-        leading: IconButton(
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-          icon: Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-        ),
+
         title: Text(
           'Arbree Attendance',
           style: TextStyle(color: Colors.white),
