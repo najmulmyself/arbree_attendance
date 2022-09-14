@@ -52,7 +52,9 @@ class _ClockInPageState extends State<ClockInPage> {
         //   ),
         // ),
         leading: IconButton(
-          onPressed: Scaffold.of(context).openDrawer,
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
           icon: Icon(
             Icons.menu,
             color: Colors.white,
@@ -91,8 +93,8 @@ class _ClockInPageState extends State<ClockInPage> {
               GestureDetector(
                 onTap: null,
                 child: Container(
-                  child: SvgPicture.asset(
-                    'assets/images/clockin.svg',
+                  child: Image.asset(
+                    'assets/images/in.png',
                     height: 200,
                     width: 200,
                   ),
