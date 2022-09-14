@@ -2,7 +2,9 @@
 
 import 'dart:ui';
 
+import 'package:arbree_attendance/component/custom_listtile.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DrawerContent extends StatelessWidget {
@@ -35,7 +37,9 @@ class DrawerContent extends StatelessWidget {
                   leading: CircleAvatar(
                     // backgroundColor: Colors.white,
                     radius: 20,
-                    backgroundImage: AssetImage('assets/images/logo_aaa.png'),
+                    backgroundColor: Colors.white,
+                    child: Text('A'),
+                    //backgroundImage: AssetImage('assets/images/logo_aaa.png'),
                   ),
                   title: Text(
                     'Arbree Limited',
@@ -57,35 +61,43 @@ class DrawerContent extends StatelessWidget {
         SizedBox(
           height: 20,
         ),
-        Align(
-          alignment: Alignment.center,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
           child: Column(
             children: [
-              ListTile(
-                leading: Icon(
-                  Icons.home,
-                  color: Color(0xff0ABAB5),
-                ),
-                title: Text(
-                  'Home',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Color(0xff0ABAB5),
-                  ),
-                ),
+              CustomListTile(
+                title: 'Notifications',
+                icon: FontAwesomeIcons.bell,
+                trailing: true,
+                countNotification: '5',
               ),
-              ListTile(
-                leading: Icon(
-                  Icons.home,
-                  color: Color(0xff0ABAB5),
-                ),
-                title: Text(
-                  'Home',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Color(0xff0ABAB5),
-                  ),
-                ),
+              CustomListTile(
+                title: 'Notice Board',
+                icon: FontAwesomeIcons.clipboard,
+              ),
+              CustomListTile(
+                title: 'Attendance Report',
+                icon: FontAwesomeIcons.listCheck,
+              ),
+              CustomListTile(
+                title: 'Leave Overview',
+                icon: FontAwesomeIcons.calendarCheck,
+              ),
+              CustomListTile(
+                title: 'Team Profile',
+                icon: FontAwesomeIcons.usersRectangle,
+              ),
+              CustomListTile(
+                title: 'My Profile',
+                icon: FontAwesomeIcons.user,
+              ),
+              CustomListTile(
+                title: 'Settings',
+                icon: FontAwesomeIcons.gears,
+              ),
+              CustomListTile(
+                title: 'Sign out',
+                icon: FontAwesomeIcons.rightFromBracket,
               ),
             ],
           ),
@@ -94,6 +106,8 @@ class DrawerContent extends StatelessWidget {
     );
   }
 }
+
+
 
 
 // DropdownButtonHideUnderline(
