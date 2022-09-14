@@ -49,10 +49,10 @@ class DrawerContent extends StatelessWidget {
                     'View company profile',
                     style: TextStyle(color: Colors.white),
                   ),
-                  trailing: Icon(
-                    Icons.arrow_right_outlined,
-                    color: Colors.white,
-                  ),
+                  // trailing: Icon(
+                  //   Icons.arrow_right_outlined,
+                  //   color: Colors.white,
+                  // ),
                 )
               ],
             ),
