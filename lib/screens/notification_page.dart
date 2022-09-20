@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, dead_code
 
 import 'package:arbree_attendance/component/button.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +8,65 @@ class NotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List data = [
+      {
+        'title':
+            'Arbree has requested you to check in at your current location',
+        'date': '2021-09-01',
+        'time': '10:00 AM',
+        'status': 'Pending',
+        'action': false,
+      },
+      {
+        'title': 'Admin posted a new notice on Arbree limited',
+        'date': '2021-09-01',
+        'time': '10:00 AM',
+        'status': 'Pending',
+        'action': false,
+      },
+      {
+        'title': 'CEO wants you to join as an Admin',
+        'date': '2021-09-01',
+        'time': '10:00 AM',
+        'status': 'Pending',
+        'action': true,
+      },
+      {
+        'title': 'Admin has updated your clock time for 2021-09-01',
+        'date': '2021-09-01',
+        'time': '10:00 AM',
+        'action': false,
+      },
+      {
+        'title': 'Admin has accepted your leave request',
+        'date': '2021-09-01',
+        'time': '10:00 AM',
+        'status': 'Pending',
+        'action': false,
+      },
+      {
+        'title': 'You have a new leave request from John Doe',
+        'date': '2021-09-01',
+        'time': '10:00 AM',
+        'status': 'Pending',
+        'action': false,
+      },
+      {
+        'title': 'You have a new leave request from John Doe',
+        'date': '2021-09-01',
+        'time': '10:00 AM',
+        'status': 'Pending',
+        'action': false,
+      },
+      {
+        'title': 'You have a new leave request from John Doe',
+        'date': '2021-09-01',
+        'time': '10:00 AM',
+        'status': 'Pending',
+        'action': false,
+      },
+    ];
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -29,7 +88,7 @@ class NotificationPage extends StatelessWidget {
             //         'Arbree has requested you to join a team',
             //         style: TextStyle(fontSize: 18),
             //       ),
-            //       subtitle: Text(
+            //       title: Text(
             //         'Sep 20, 2022 at 09:00 AM',
             //         style: TextStyle(
             //           color: Color(0xff0ABAB5),
@@ -100,7 +159,7 @@ class NotificationPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Arbree has requested you to join a team ',
+                              data[index]['title'],
                               softWrap: true,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 3,
@@ -114,36 +173,42 @@ class NotificationPage extends StatelessWidget {
                                 color: Color(0xff0ABAB5),
                               ),
                             ),
-                            Row(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(left: 20, right: 10),
-                                  child: ElevatedButton(
-                                    onPressed: () {},
-                                    child: Text('Accept'),
-                                    style: ElevatedButton.styleFrom(
-                                      primary: Color(0xff0ABAB5),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
+                            data[index]['action'] == false
+                                ? Container()
+                                : Row(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                            left: 20, right: 10),
+                                        child: ElevatedButton(
+                                          onPressed: () {},
+                                          child: Text('Accept'),
+                                          style: ElevatedButton.styleFrom(
+                                            primary: Color(0xff0ABAB5),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(left: 10, right: 20),
-                                  child: ElevatedButton(
-                                    onPressed: () {},
-                                    child: Text('Reject'),
-                                    style: ElevatedButton.styleFrom(
-                                      primary: Colors.grey,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                            left: 10, right: 20),
+                                        child: ElevatedButton(
+                                          onPressed: () {},
+                                          child: Text('Reject'),
+                                          style: ElevatedButton.styleFrom(
+                                            primary: Colors.grey,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ),
-                                ),
-                              ],
-                            ),
                           ],
                         ),
                       ),
@@ -156,7 +221,7 @@ class NotificationPage extends StatelessWidget {
               ),
             );
           },
-          itemCount: 10),
+          itemCount: data.length),
     );
   }
 }
