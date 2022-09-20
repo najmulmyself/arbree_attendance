@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:arbree_attendance/component/custom_listtile.dart';
+import 'package:arbree_attendance/screens/notice_board.dart';
 import 'package:arbree_attendance/screens/notification_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -67,9 +68,11 @@ class DrawerContent extends StatelessWidget {
                   CustomListTile(
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => NotificationPage()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NotificationPage(),
+                        ),
+                      );
                     },
                     title: 'Notifications',
                     icon: FontAwesomeIcons.bell,
@@ -77,7 +80,14 @@ class DrawerContent extends StatelessWidget {
                     countNotification: '5',
                   ),
                   CustomListTile(
-                    onTap: null,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NoticeBoard(),
+                        ),
+                      );
+                    },
                     title: 'Notice Board',
                     icon: FontAwesomeIcons.clipboard,
                   ),
