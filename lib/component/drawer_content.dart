@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:arbree_attendance/component/custom_listtile.dart';
+import 'package:arbree_attendance/screens/notification_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -64,36 +65,49 @@ class DrawerContent extends StatelessWidget {
               child: Column(
                 children: [
                   CustomListTile(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NotificationPage()));
+                    },
                     title: 'Notifications',
                     icon: FontAwesomeIcons.bell,
                     trailing: true,
                     countNotification: '5',
                   ),
                   CustomListTile(
+                    onTap: null,
                     title: 'Notice Board',
                     icon: FontAwesomeIcons.clipboard,
                   ),
                   CustomListTile(
+                    onTap: null,
                     title: 'Attendance Report',
                     icon: FontAwesomeIcons.listCheck,
                   ),
                   CustomListTile(
+                    onTap: null,
                     title: 'Leave Overview',
                     icon: FontAwesomeIcons.calendarCheck,
                   ),
                   CustomListTile(
+                    onTap: null,
                     title: 'Team Profile',
                     icon: FontAwesomeIcons.usersRectangle,
                   ),
                   CustomListTile(
+                    onTap: null,
                     title: 'My Profile',
                     icon: FontAwesomeIcons.user,
                   ),
                   CustomListTile(
+                    onTap: null,
                     title: 'Settings',
                     icon: FontAwesomeIcons.gears,
                   ),
                   CustomListTile(
+                    onTap: null,
                     title: 'Sign out',
                     icon: FontAwesomeIcons.rightFromBracket,
                   ),

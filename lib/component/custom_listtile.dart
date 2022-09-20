@@ -6,16 +6,19 @@ class CustomListTile extends StatelessWidget {
   CustomListTile(
       {required this.icon,
       required this.title,
+      required this.onTap,
       this.trailing = false,
       this.countNotification});
   final IconData? icon;
   final String? title;
+  final Function()? onTap;
   bool trailing;
   final String? countNotification;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: onTap,
       horizontalTitleGap: 2,
       contentPadding: EdgeInsets.symmetric(horizontal: 30),
       minVerticalPadding: 2,
