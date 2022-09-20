@@ -75,55 +75,83 @@ class NotificationPage extends StatelessWidget {
             //     ),
             //   ],
             // );
-            return Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CircleAvatar(),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Arbree has requested you to join a team'),
-                        Text('Sep 20, 2022 at 09:00 AM'),
-                        Row(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(left: 20, right: 10),
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                child: Text('Accept'),
-                                style: ElevatedButton.styleFrom(
-                                  primary: Color(0xff0ABAB5),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(left: 10, right: 20),
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                child: Text('Reject'),
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.grey,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+            return Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 18.0, vertical: 5),
+              child: Column(
+                children: [
+                  Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CircleAvatar(
+                        radius: 21,
+                        backgroundColor: Colors.black87,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 20,
+                          child: Text('A'),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
-                Divider(
-                  thickness: 1,
-                ),
-              ],
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Arbree has requested you to join',
+                            softWrap: true,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 3,
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            'Sep 20, 2022 at 09:00 AM',
+                            style: TextStyle(
+                              color: Color(0xff0ABAB5),
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(left: 20, right: 10),
+                                child: ElevatedButton(
+                                  onPressed: () {},
+                                  child: Text('Accept'),
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Color(0xff0ABAB5),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(left: 10, right: 20),
+                                child: ElevatedButton(
+                                  onPressed: () {},
+                                  child: Text('Reject'),
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.grey,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                ],
+              ),
             );
           },
           itemCount: 10),
