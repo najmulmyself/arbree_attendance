@@ -14,6 +14,7 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
         primary: btnColor,
       ),
