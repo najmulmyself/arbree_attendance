@@ -95,55 +95,57 @@ class NotificationPage extends StatelessWidget {
                       SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Arbree has requested you to join',
-                            softWrap: true,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 3,
-                            style: TextStyle(
-                              fontSize: 16,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Arbree has requested you to join a team ',
+                              softWrap: true,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 3,
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Sep 20, 2022 at 09:00 AM',
-                            style: TextStyle(
-                              color: Color(0xff0ABAB5),
+                            Text(
+                              'Sep 20, 2022 at 09:00 AM',
+                              style: TextStyle(
+                                color: Color(0xff0ABAB5),
+                              ),
                             ),
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(left: 20, right: 10),
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  child: Text('Accept'),
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Color(0xff0ABAB5),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
+                            Row(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(left: 20, right: 10),
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text('Accept'),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Color(0xff0ABAB5),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(left: 10, right: 20),
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  child: Text('Reject'),
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Colors.grey,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
+                                Container(
+                                  margin: EdgeInsets.only(left: 10, right: 20),
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text('Reject'),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.grey,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
