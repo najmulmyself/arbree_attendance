@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:arbree_attendance/component/custom_listtile.dart';
 import 'package:arbree_attendance/screens/notice_board.dart';
 import 'package:arbree_attendance/screens/notification_page.dart';
+import 'package:arbree_attendance/screens/reports_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -92,7 +93,14 @@ class DrawerContent extends StatelessWidget {
                     icon: FontAwesomeIcons.clipboard,
                   ),
                   CustomListTile(
-                    onTap: null,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ReportScreen(),
+                        ),
+                      );
+                    },
                     title: 'Attendance Report',
                     icon: FontAwesomeIcons.listCheck,
                   ),
