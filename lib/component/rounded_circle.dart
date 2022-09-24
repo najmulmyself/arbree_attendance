@@ -22,7 +22,7 @@ class RoundedCircle extends StatelessWidget {
         radius: 29,
         backgroundColor: color ?? Colors.white,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(5.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -36,9 +36,10 @@ class RoundedCircle extends StatelessWidget {
               ),
               AutoSizeText(
                 title,
+                maxLines: 1,
                 // textScaleFactor: 1.2,
                 // overflow: TextOverflow.fade,
-                style: TextStyle(fontSize: 12, color: border),
+                style: TextStyle(fontSize: 11, color: border),
               ),
             ],
           ),
