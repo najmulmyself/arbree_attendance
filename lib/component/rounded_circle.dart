@@ -14,33 +14,30 @@ class RoundedCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return CircleAvatar(
+      radius: 31,
+      backgroundColor: border,
       child: CircleAvatar(
-        radius: 31,
-        backgroundColor: border,
-        child: CircleAvatar(
-          radius: 29,
-          backgroundColor: color ?? Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  number.toString(),
-                  style: TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.bold,
-                    color: border,
-                  ),
+        radius: 29,
+        backgroundColor: color ?? Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                number.toString(),
+                style: TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.bold,
+                  color: border,
                 ),
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 12, color: border),
-                ),
-              ],
-            ),
+              ),
+              Text(
+                title,
+                style: TextStyle(fontSize: 12, color: border),
+              ),
+            ],
           ),
         ),
       ),

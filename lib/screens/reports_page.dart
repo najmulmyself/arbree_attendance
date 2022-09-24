@@ -50,79 +50,196 @@ class _ReportScreenState extends State<ReportScreen> {
         ],
         centerTitle: true,
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Column(
-            children: [
-              SizedBox(
-                height: 30,
-              ),
-              DropdownButton(
-                // value: items[0],
-                icon: Icon(
-                  Icons.calendar_today,
-                ),
-                hint: Text('This Months'),
-                underline: Container(
-                  height: 2,
-                  color: Colors.grey,
-                ),
-                items: items
-                    .map(
-                      (shift) => DropdownMenuItem(
-                        child: Text(shift),
-                        value: shift,
-                      ),
-                    )
-                    .toList(),
-                onChanged: (value) {},
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  RoundedCircle(
-                    border: Color(0xff374552),
-                    title: 'Present',
-                    number: 22,
-                  ),
-                  // SizedBox(
-                  //   width: 10,
-                  // ),
-                  RoundedCircle(
-                    color: Color(0xffFAD2D2),
-                    border: Color(0xffF0564A),
-                    title: 'ontime',
-                    number: 22,
-                  ),
-                  RoundedCircle(
-                    color: Color(0xffF8F8C9),
-                    border: Color(0xffFFB636),
-                    title: 'late',
-                    number: 22,
-                  ),
-                  RoundedCircle(
-                    color: Color(0xffD9F9F2),
-                    border: Color(0xff1AB394),
-                    title: 'absent',
-                    number: 22,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Container(
-                    height: 200,
-                    width: double.infinity,
-                    color: Colors.red,
-                    child: Text('Chart'),
-                  )
-                ],
-              ),
-            ],
+          SizedBox(
+            height: 30,
           ),
+          DropdownButton(
+            // value: items[0],
+            icon: Icon(
+              Icons.calendar_today,
+            ),
+            hint: Text('This Months'),
+            underline: Container(
+              height: 2,
+              color: Colors.grey,
+            ),
+            items: items
+                .map(
+                  (shift) => DropdownMenuItem(
+                    child: Text(shift),
+                    value: shift,
+                  ),
+                )
+                .toList(),
+            onChanged: (value) {},
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 18.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                RoundedCircle(
+                  border: Color(0xff374552),
+                  title: 'Present',
+                  number: 22,
+                ),
+                // SizedBox(
+                //   width: 10,
+                // ),
+                RoundedCircle(
+                  color: Color(0xffD9F9F2),
+                  border: Color(0xff1AB394),
+                  title: 'ontime',
+                  number: 18,
+                ),
+                RoundedCircle(
+                  color: Color(0xffF8F8C9),
+                  border: Color(0xffFFB636),
+                  title: 'late',
+                  number: 6,
+                ),
+                RoundedCircle(
+                  color: Color(0xffFAD2D2),
+                  border: Color(0xffF0564A),
+                  title: 'absent',
+                  number: 2,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            child: ListView(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                  ),
+                  height: 120,
+                  // color: Colors.red,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          color: Color(0xff374552),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '30',
+                                style: TextStyle(
+                                    fontSize: 30,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'June',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                          // color: Colors.green,
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                height: 20,
+                                color: Color(0xffE2EAE8),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Shift 1',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                        color: Color(0xff374552),
+                                      ),
+                                    ),
+                                    Text(
+                                      '10.00am - 6.00pm',
+                                      style: TextStyle(
+                                        color: Colors.grey.shade800,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding:
+                                            EdgeInsets.symmetric(horizontal: 5),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text('Start'),
+                                                Text('11.02am'),
+                                              ],
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text('late'),
+                                                Text('1h 2m'),
+                                              ],
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text('total'),
+                                                Text('9h 23m'),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
