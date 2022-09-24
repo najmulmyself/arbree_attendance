@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class RoundedCircle extends StatelessWidget {
@@ -25,7 +26,7 @@ class RoundedCircle extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              AutoSizeText(
                 number.toString(),
                 style: TextStyle(
                   fontSize: 19,
@@ -33,8 +34,10 @@ class RoundedCircle extends StatelessWidget {
                   color: border,
                 ),
               ),
-              Text(
+              AutoSizeText(
                 title,
+                // textScaleFactor: 1.2,
+                // overflow: TextOverflow.fade,
                 style: TextStyle(fontSize: 12, color: border),
               ),
             ],
