@@ -118,29 +118,38 @@ class _ReportScreenState extends State<ReportScreen> {
             height: 20,
           ),
           Expanded(
-            child: ListView(
-              children: [
-                ReportTile(
-                  date: '30',
-                ),
-                ReportTile(
-                  date: '29',
-                ),
-                ReportTile(
-                  date: '28',
-                ),
-                ReportTile(
-                  date: '27',
-                ),
-                ReportTile(
-                  date: '26',
-                ),
-                ReportTile(
-                  date: '25',
-                ),
-              ],
+            // child: ListView(
+            //   children: [
+            //     ReportTile(
+            //       date: '30',
+            //     ),
+            //     ReportTile(
+            //       date: '29',
+            //     ),
+            //     ReportTile(
+            //       date: '28',
+            //     ),
+            //     ReportTile(
+            //       date: '27',
+            //     ),
+            //     ReportTile(
+            //       date: '26',
+            //     ),
+            //     ReportTile(
+            //       date: '25',
+            //     ),
+            //   ],
+            // ),
+            child: ListView.builder(
+              reverse: true,
+              itemCount: 30,
+              itemBuilder: (context, index) {
+                return ReportTile(
+                  date: (index + 1).toString(),
+                );
+              },
             ),
-          )
+          ),
         ],
       ),
     );

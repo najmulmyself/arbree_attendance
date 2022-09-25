@@ -33,8 +33,8 @@ class LeaveStatusContainer extends StatelessWidget {
           ),
           // color: Colors.red,
         ),
-        LeaveTile(),
-        LeaveTile(),
+        // LeaveTile(),
+        // LeaveTile(),
       ],
     );
   }

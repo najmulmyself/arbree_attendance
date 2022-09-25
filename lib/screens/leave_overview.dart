@@ -85,7 +85,26 @@ class _LeaveOverviewState extends State<LeaveOverview> {
             child: ListView(
               children: [
                 LeaveStatusContainer(),
+                Column(
+                  children: [
+                    LeaveTile(),
+                    LeaveTile(),
+                    LeaveTile(),
+                  ],
+                ),
+                // test //
+                // ListView.builder(
+                //   itemBuilder: (context, index) {
+                //     return LeaveTile();
+                //   },
+                //   itemCount: 2,
+                // ),
                 LeaveStatusContainer(),
+                Column(
+                  children: [
+                    LeaveTile(),
+                  ],
+                )
               ],
             ),
           )
