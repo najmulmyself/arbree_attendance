@@ -15,6 +15,9 @@ class LeaveStatusContainer extends StatelessWidget {
       children: [
         // LEAVE STATUS CONTAINER
         // LeaveStatus(),
+        SizedBox(
+          height: 20,
+        ),
         Container(
           padding: EdgeInsets.only(left: 20, top: 5),
           decoration: BoxDecoration(

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -9,6 +11,7 @@ class LeaveTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(bottom: 15),
       // LEAVE TILE
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
@@ -31,7 +34,9 @@ class LeaveTile extends StatelessWidget {
                   Text(
                     'Vacation',
                     style: TextStyle(
-                        fontSize: 15, color: Color(0xff0ABAB5)),
+                      fontSize: 15,
+                      color: Color(0xff0ABAB5),
+                    ),
                   ),
                 ],
               ),
@@ -46,31 +51,26 @@ class LeaveTile extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 10),
+                          padding: EdgeInsets.symmetric(horizontal: 10),
                           child: Column(
-                            crossAxisAlignment:
-                                CrossAxisAlignment.start,
-                            mainAxisAlignment:
-                                MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text('6 jan , 2022'),
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment
-                                        .spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Weekday',
                                     style: TextStyle(
-                                      color: Color(0xff0ABAB5),
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   Text(
                                     '3',
                                     style: TextStyle(
-                                      fontWeight:
-                                          FontWeight.bold,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xff374552),
                                     ),
                                   ),
@@ -78,20 +78,18 @@ class LeaveTile extends StatelessWidget {
                               ),
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment
-                                        .spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Weekend',
                                     style: TextStyle(
-                                      color: Color(0xff0ABAB5),
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   Text(
                                     '2',
                                     style: TextStyle(
-                                      fontWeight:
-                                          FontWeight.bold,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xff374552),
                                     ),
                                   ),
@@ -112,8 +110,13 @@ class LeaveTile extends StatelessWidget {
                   height: 20,
                   alignment: Alignment.center,
                   width: double.infinity,
-                  color: Color(0xffE2EAE8),
-                  child: Text('Pending'),
+                  color: Color(0xffF8F8C9),
+                  child: Text(
+                    'Pending',
+                    style: TextStyle(
+                      color: Color(0xffFFB636),
+                    ),
+                  ),
                 ),
               ],
             ),
