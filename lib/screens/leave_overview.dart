@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:arbree_attendance/component/leave_status_container.dart';
+import 'package:arbree_attendance/component/leave_tile.dart';
 import 'package:arbree_attendance/component/rounded_circle.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LeaveOverview extends StatefulWidget {
   const LeaveOverview({Key? key}) : super(key: key);
@@ -81,252 +84,8 @@ class _LeaveOverviewState extends State<LeaveOverview> {
           Expanded(
             child: ListView(
               children: [
-                Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 20, top: 5),
-                      decoration: BoxDecoration(
-                        color: Color(0xffE2EAE8),
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      height: 35,
-                      width: double.infinity,
-                      child: Text(
-                        'UPCOMING LEAVE',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                          color: Color(0xff374552),
-                        ),
-                      ),
-                      // color: Colors.red,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      height: 120,
-                      // color: Colors.red,
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              color: Color(0xff374552),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'dsjflsdajf',
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    'September',
-                                    style: TextStyle(
-                                        fontSize: 15, color: Colors.white),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                              // color: Colors.green,
-                              child: Column(
-                                children: [
-                                  Container(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    height: 20,
-                                    color: Color(0xffE2EAE8),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Shift 1',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15,
-                                            color: Color(0xff374552),
-                                          ),
-                                        ),
-                                        Text(
-                                          '10.00am - 6.00pm',
-                                          style: TextStyle(
-                                            color: Colors.grey.shade800,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 5),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      'Start',
-                                                      style: TextStyle(
-                                                        color:
-                                                            Color(0xff0ABAB5),
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      '11.02am',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color:
-                                                            Color(0xff374552),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      'late',
-                                                      style: TextStyle(
-                                                        color:
-                                                            Color(0xff0ABAB5),
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      '1h 2m',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color:
-                                                            Color(0xff374552),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      'total',
-                                                      style: TextStyle(
-                                                        color:
-                                                            Color(0xff0ABAB5),
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      '9h 23m',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color:
-                                                            Color(0xff374552),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(width: 10),
-                                        Expanded(
-                                          child: Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 5),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      'end',
-                                                      style: TextStyle(
-                                                        color:
-                                                            Color(0xff0ABAB5),
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      '06.30pm',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color:
-                                                            Color(0xff374552),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      'OT',
-                                                      style: TextStyle(
-                                                        color:
-                                                            Color(0xff0ABAB5),
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      '30m',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color:
-                                                            Color(0xff374552),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text(''),
-                                                    Text(''),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                LeaveStatusContainer(),
+                LeaveStatusContainer(),
               ],
             ),
           )
@@ -335,3 +94,33 @@ class _LeaveOverviewState extends State<LeaveOverview> {
     );
   }
 }
+
+
+
+// class LeaveStatus extends StatelessWidget {
+//   const LeaveStatus({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       padding: EdgeInsets.only(left: 20, top: 5),
+//       decoration: BoxDecoration(
+//         color: Color(0xffE2EAE8),
+//         border: Border.all(color: Colors.grey),
+//       ),
+//       height: 35,
+//       width: double.infinity,
+//       child: Text(
+//         'UPCOMING LEAVE',
+//         style: TextStyle(
+//           fontWeight: FontWeight.bold,
+//           fontSize: 15,
+//           color: Color(0xff374552),
+//         ),
+//       ),
+//       // color: Colors.red,
+//     );
+//   }
+// }
