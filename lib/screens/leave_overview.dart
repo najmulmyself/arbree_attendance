@@ -85,12 +85,13 @@ class _LeaveOverviewState extends State<LeaveOverview> {
             child: ListView(
               children: [
                 LeaveStatusContainer(),
-                Column(
-                  children: [
-                    LeaveTile(),
-                    LeaveTile(),
-                    LeaveTile(),
-                  ],
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: ClampingScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return LeaveTile();
+                  },
+                  itemCount: 5,
                 ),
                 // test //
                 // ListView.builder(
@@ -100,10 +101,19 @@ class _LeaveOverviewState extends State<LeaveOverview> {
                 //   itemCount: 2,
                 // ),
                 LeaveStatusContainer(),
-                Column(
-                  children: [
-                    LeaveTile(),
-                  ],
+                // Column(
+                //   children: [
+                //     LeaveTile(),
+                //     LeaveTile(),
+                //   ],
+                // )
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: ClampingScrollPhysics(), // really usefull
+                  itemBuilder: (context, index) {
+                    return LeaveTile();
+                  },
+                  itemCount: 5,
                 )
               ],
             ),
