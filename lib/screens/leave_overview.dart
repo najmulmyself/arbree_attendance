@@ -3,6 +3,7 @@
 import 'package:arbree_attendance/component/leave_status_container.dart';
 import 'package:arbree_attendance/component/leave_tile.dart';
 import 'package:arbree_attendance/component/rounded_circle.dart';
+import 'package:arbree_attendance/screens/new_leave_req.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -22,7 +23,14 @@ class _LeaveOverviewState extends State<LeaveOverview> {
         title: Text('Leave Overview'),
         centerTitle: true,
         actions: [
-          Icon(Icons.add),
+          IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => NewLeaveReq(),),);
+            },
+            icon: Icon(Icons.add),
+            iconSize: 30,
+          ),
         ],
       ),
       body: Column(
@@ -109,7 +117,8 @@ class _LeaveOverviewState extends State<LeaveOverview> {
                 // )
                 ListView.builder(
                   shrinkWrap: true,
-                  physics: ClampingScrollPhysics(), // really usefull https://stackoverflow.com/questions/60393840/how-to-add-list-view-builder-inside-another-list-view-builder
+                  physics:
+                      ClampingScrollPhysics(), // really usefull https://stackoverflow.com/questions/60393840/how-to-add-list-view-builder-inside-another-list-view-builder
                   itemBuilder: (context, index) {
                     return LeaveTile();
                   },
