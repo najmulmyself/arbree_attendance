@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:arbree_attendance/component/button.dart';
 import 'package:arbree_attendance/component/custom_textfield.dart';
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class NewLeaveReq extends StatefulWidget {
@@ -11,7 +13,8 @@ class NewLeaveReq extends StatefulWidget {
 }
 
 class _NewLeaveReqState extends State<NewLeaveReq> {
-  List items = ['All', 'Available', 'Vacation', 'Sick', 'Unpaid'];
+  List items = ['Vacation', 'Sick', 'Unpaid'];
+  String? newValue;
 
   @override
   Widget build(BuildContext context) {
@@ -32,34 +35,14 @@ class _NewLeaveReqState extends State<NewLeaveReq> {
                 builder: (context) => Container(),
               ),
             ),
-            // DropdownButton(
-            //   isExpanded: true,
-            //   // value: items[0],
-            //   icon: Icon(
-            //     Icons.keyboard_arrow_down_rounded,
-            //   ),
-            //   hint: Text('All'),
-            //   underline: Container(
-            //     height: 2,
-            //     color: Colors.grey,
-            //   ),
-            //   items: items
-            //       .map(
-            //         (shift) => DropdownMenuItem(
-            //           child: Text(shift),
-            //           value: shift,
-            //         ),
-            //       )
-            //       .toList(),
-            //   onChanged: (value) {},
-            // ),
             FormField(
               builder: (context) {
                 return InputDecorator(
                   decoration: InputDecoration(
                     labelText: 'Leave Type',
                     labelStyle: TextStyle(
-                      color: Colors.grey,
+                      color: Utils.colorPrimary,
+                      fontSize: 22,
                     ),
                     errorStyle: TextStyle(
                       color: Colors.redAccent,
@@ -74,11 +57,12 @@ class _NewLeaveReqState extends State<NewLeaveReq> {
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton(
                       isExpanded: true,
+                      value: newValue,
                       // value: items[0],
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                       ),
-                      hint: Text('All'),
+                      hint: Text('Vacation'),
                       underline: Container(
                         height: 2,
                         color: Colors.grey,
@@ -91,13 +75,28 @@ class _NewLeaveReqState extends State<NewLeaveReq> {
                             ),
                           )
                           .toList(),
-                      onChanged: (value) {},
+                      onChanged: (value) {
+                        setState(() {
+                          newValue = value as String?;
+                        });
+                      },
                     ),
                   ),
                 );
               },
               // ),
-            )
+            ),
+            CustomTextField(
+              title: 'Comments',
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Button(
+              title: 'Send Request',
+              onPressed: () {},
+              btnColor: Color(0xff374552),
+            ),
           ],
         ),
       ),

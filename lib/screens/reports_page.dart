@@ -2,6 +2,7 @@
 
 import 'package:arbree_attendance/component/report_tile.dart';
 import 'package:arbree_attendance/component/rounded_circle.dart';
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class ReportScreen extends StatefulWidget {
@@ -95,7 +96,7 @@ class _ReportScreenState extends State<ReportScreen> {
                 // ),
                 RoundedCircle(
                   color: Color(0xffD9F9F2),
-                  border: Color(0xff1AB394),
+                  border: Utils.colorPrimary,
                   title: 'ontime',
                   number: 18,
                 ),

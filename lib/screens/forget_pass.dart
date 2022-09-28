@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:arbree_attendance/component/button.dart';
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 import '../component/custom_textfield.dart';
@@ -16,7 +17,7 @@ class ForgetPass extends StatelessWidget {
           Container(
             height: 150,
             width: double.infinity,
-            color: Color(0xff0ABAB5),
+            color: Utils.colorPrimary,
             child: Image.asset('assets/images/logo_aaa.png'),
           ),
           Padding(
@@ -30,7 +31,7 @@ class ForgetPass extends StatelessWidget {
                   'Forgot Password',
                   style: TextStyle(
                     fontSize: 25,
-                    color: Color(0xff0ABAB5),
+                    color: Utils.colorPrimary,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -65,7 +66,7 @@ class ForgetPass extends StatelessWidget {
                   child: Text(
                     'Back to Sign In',
                     style: TextStyle(
-                      color: Color(0xff0ABAB5),
+                      color: Utils.colorPrimary,
                       fontSize: 17,
                     ),
                   ),

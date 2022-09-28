@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class CustomListTile extends StatelessWidget {
@@ -22,7 +23,7 @@ class CustomListTile extends StatelessWidget {
       horizontalTitleGap: 2,
       contentPadding: EdgeInsets.symmetric(horizontal: 30),
       minVerticalPadding: 2,
-      leading: Icon(icon!, color: Color(0xff0ABAB5)),
+      leading: Icon(icon!, color: Utils.colorPrimary),
       trailing: trailing != false
           ? CircleAvatar(
               radius: 10,

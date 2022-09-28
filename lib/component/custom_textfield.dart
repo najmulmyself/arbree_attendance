@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -17,22 +18,22 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onTap: onTap,
+      onTap: onTap ?? null,
       readOnly: readOnly,
       style: TextStyle(),
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: Color(0xff0ABAB5),
+            color: Utils.colorPrimary,
             width: 2,
           ),
         ),
         labelText: title,
         // hintText: '31-12-2021', // this need to be dynamic
         labelStyle: TextStyle(
-          color: Color(0xff0ABAB5),
-          fontSize: 20,
+          color: Utils.colorPrimary,
+          fontSize: 18,
         ),
       ),
     );

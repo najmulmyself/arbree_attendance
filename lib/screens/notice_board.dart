@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class NoticeBoard extends StatelessWidget {
@@ -67,7 +68,7 @@ class NoticeBoard extends StatelessWidget {
                         Text(
                           '10 sep 2022',
                           style: TextStyle(
-                            color: Color(0xff0ABAB5),
+                            color: Utils.colorPrimary,
                           ),
                         ),
                         SizedBox(

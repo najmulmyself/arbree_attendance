@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class ReportTile extends StatelessWidget {
@@ -84,7 +85,7 @@ class ReportTile extends StatelessWidget {
                                     Text(
                                       'Start',
                                       style: TextStyle(
-                                        color: Color(0xff0ABAB5),
+                                        color: Utils.colorPrimary,
                                       ),
                                     ),
                                     Text(
@@ -103,7 +104,7 @@ class ReportTile extends StatelessWidget {
                                     Text(
                                       'late',
                                       style: TextStyle(
-                                        color: Color(0xff0ABAB5),
+                                        color: Utils.colorPrimary,
                                       ),
                                     ),
                                     Text(
@@ -122,7 +123,7 @@ class ReportTile extends StatelessWidget {
                                     Text(
                                       'total',
                                       style: TextStyle(
-                                        color: Color(0xff0ABAB5),
+                                        color: Utils.colorPrimary,
                                       ),
                                     ),
                                     Text(
@@ -152,7 +153,7 @@ class ReportTile extends StatelessWidget {
                                     Text(
                                       'end',
                                       style: TextStyle(
-                                        color: Color(0xff0ABAB5),
+                                        color: Utils.colorPrimary,
                                       ),
                                     ),
                                     Text(
@@ -171,7 +172,7 @@ class ReportTile extends StatelessWidget {
                                     Text(
                                       'OT',
                                       style: TextStyle(
-                                        color: Color(0xff0ABAB5),
+                                        color: Utils.colorPrimary,
                                       ),
                                     ),
                                     Text(

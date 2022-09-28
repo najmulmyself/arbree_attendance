@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:arbree_attendance/component/drawer_content.dart';
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -96,12 +97,12 @@ class _ClockInPageState extends State<ClockInPage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: FaIcon(FontAwesomeIcons.clock,
-                            color: Color(0xff0ABAB5)),
+                            color: Utils.colorPrimary),
                       ),
                       Text(
                         'start time',
                         style: TextStyle(
-                          color: Color(0xff0ABAB5),
+                          color: Utils.colorPrimary,
                         ),
                       ),
                     ],

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, dead_code
 
 import 'package:arbree_attendance/component/button.dart';
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class NotificationPage extends StatelessWidget {
@@ -170,7 +171,7 @@ class NotificationPage extends StatelessWidget {
                             Text(
                               'Sep 20, 2022 at 09:00 AM',
                               style: TextStyle(
-                                color: Color(0xff0ABAB5),
+                                color: Utils.colorPrimary,
                               ),
                             ),
                             data[index]['action'] == false
@@ -184,7 +185,7 @@ class NotificationPage extends StatelessWidget {
                                           onPressed: () {},
                                           child: Text('Accept'),
                                           style: ElevatedButton.styleFrom(
-                                            primary: Color(0xff0ABAB5),
+                                            primary: Utils.colorPrimary,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10),

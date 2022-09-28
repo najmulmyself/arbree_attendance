@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:arbree_attendance/component/button.dart';
 import 'package:arbree_attendance/component/custom_textfield.dart';
 import 'package:arbree_attendance/screens/profile.dart';
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -85,7 +86,7 @@ class _SignInState extends State<SignIn> {
                 'Sign In',
                 style: TextStyle(
                   fontSize: 25,
-                  color: Color(0xff0ABAB5),
+                  color: Utils.colorPrimary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -133,7 +134,7 @@ class _SignInState extends State<SignIn> {
                         () {
                           Icon(
                             Icons.remove_red_eye,
-                            color: Colors.blue,
+                            color: Utils.colorPrimary,
                           );
                         },
                       );
@@ -156,7 +157,7 @@ class _SignInState extends State<SignIn> {
                     child: Text(
                       'Forgot password?',
                       style: TextStyle(
-                        color: Color(0xff0ABAB5),
+                        color: Utils.colorPrimary,
                       ),
                     ),
                   )),
@@ -188,7 +189,7 @@ class _SignInState extends State<SignIn> {
               'Company Registration',
               style: TextStyle(
                 fontSize: 17,
-                color: Color(0xff0ABAB5),
+                color: Utils.colorPrimary,
               ),
             ),
             Text(
@@ -196,7 +197,7 @@ class _SignInState extends State<SignIn> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Color(0xff0ABAB5),
+                color: Utils.colorPrimary,
               ),
             ),
           ],

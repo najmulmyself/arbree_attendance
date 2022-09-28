@@ -3,7 +3,9 @@
 import 'package:arbree_attendance/component/leave_status_container.dart';
 import 'package:arbree_attendance/component/leave_tile.dart';
 import 'package:arbree_attendance/component/rounded_circle.dart';
+import 'package:arbree_attendance/screens/leave_details_page.dart';
 import 'package:arbree_attendance/screens/new_leave_req.dart';
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class LeaveOverview extends StatefulWidget {
@@ -15,6 +17,7 @@ class LeaveOverview extends StatefulWidget {
 
 class _LeaveOverviewState extends State<LeaveOverview> {
   List items = ['All', 'Available', 'Vacation', 'Sick', 'Unpaid'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +56,7 @@ class _LeaveOverviewState extends State<LeaveOverview> {
                 title: 'vacation',
                 number: 0,
                 color: Color(0xffD9F9F2),
-                border: Color(0xff1AB394),
+                border: Utils.colorPrimary,
               ),
               RoundedCircle(
                 title: 'sick',
@@ -100,7 +103,12 @@ class _LeaveOverviewState extends State<LeaveOverview> {
                   shrinkWrap: true,
                   physics: ClampingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return LeaveTile();
+                    return LeaveTile(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LeaveDetails()),
+                      ),
+                    );
                   },
                   itemCount: 5,
                 ),
