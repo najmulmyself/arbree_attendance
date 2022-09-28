@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:arbree_attendance/component/button.dart';
 import 'package:arbree_attendance/component/icon_rounded_circle.dart';
 import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -77,6 +78,84 @@ class LeaveDetails extends StatelessWidget {
                       ],
                     ),
                     Text('Vacation')
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.calendar,
+                          color: Utils.colorPrimary,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Comments',
+                          style: TextStyle(
+                              color: Utils.colorPrimaryFont,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                  ),
+                  child: Text(
+                      'I have a plan for a winter vacation trip with my family and therefor the vacation leaves are intended'),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Button(
+                      btnColor: Utils.colorPrimaryFont,
+                      onPressed: () {},
+                      title: 'Edit',
+                    ),
+                    Button(
+                      btnColor: Colors.redAccent,
+                      onPressed: () {},
+                      title: 'Delete',
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Divider(
+                  thickness: 2,
+                  color: Utils.colorPrimary,
+                ),
+                Row(
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.clock,
+                      color: Utils.colorYollow,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'Pending admin response',
+                      style: TextStyle(
+                          color: Utils.colorPrimaryFont,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               ],

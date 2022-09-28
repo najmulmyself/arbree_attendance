@@ -118,7 +118,12 @@ class _LeaveOverviewState extends State<LeaveOverview> {
                   physics:
                       ClampingScrollPhysics(), // really usefull https://stackoverflow.com/questions/60393840/how-to-add-list-view-builder-inside-another-list-view-builder
                   itemBuilder: (context, index) {
-                    return LeaveTile();
+                    return LeaveTile(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LeaveDetails()),
+                      ),
+                    );
                   },
                   itemCount: 5,
                 )
