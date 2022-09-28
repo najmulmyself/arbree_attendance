@@ -42,12 +42,43 @@ class LeaveDetails extends StatelessWidget {
                         SizedBox(
                           width: 10,
                         ),
-                        Text('Leave Days'),
+                        Text(
+                          'Leave Days',
+                          style: TextStyle(
+                              color: Utils.colorPrimaryFont,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ],
                     ),
                     Text('6,11,12 , Sept , 2022')
                   ],
-                )
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.calendar,
+                          color: Utils.colorPrimary,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Leave Type',
+                          style: TextStyle(
+                              color: Utils.colorPrimaryFont,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Text('Vacation')
+                  ],
+                ),
               ],
             ),
           )
