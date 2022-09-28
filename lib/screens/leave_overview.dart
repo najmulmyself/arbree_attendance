@@ -104,9 +104,7 @@ class _LeaveOverviewState extends State<LeaveOverview> {
                   },
                   itemCount: 5,
                 ),
-               
                 LeaveStatusContainer(),
-       
                 ListView.builder(
                   shrinkWrap: true,
                   physics:
@@ -124,4 +122,3 @@ class _LeaveOverviewState extends State<LeaveOverview> {
     );
   }
 }
-
