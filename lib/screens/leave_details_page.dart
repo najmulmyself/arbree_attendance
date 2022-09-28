@@ -2,6 +2,7 @@
 
 import 'package:arbree_attendance/component/button.dart';
 import 'package:arbree_attendance/component/icon_rounded_circle.dart';
+import 'package:arbree_attendance/screens/new_leave_req.dart';
 import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -124,7 +125,14 @@ class LeaveDetails extends StatelessWidget {
                   children: [
                     Button(
                       btnColor: Utils.colorPrimaryFont,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NewLeaveReq(
+                                      appTitle: "Edit Leave Request",
+                                    )));
+                      },
                       title: 'Edit',
                     ),
                     Button(

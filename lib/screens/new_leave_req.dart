@@ -6,7 +6,8 @@ import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class NewLeaveReq extends StatefulWidget {
-  const NewLeaveReq({Key? key}) : super(key: key);
+  NewLeaveReq({this.appTitle = 'New Leave Request'});
+  String? appTitle;
 
   @override
   State<NewLeaveReq> createState() => _NewLeaveReqState();
@@ -18,9 +19,10 @@ class _NewLeaveReqState extends State<NewLeaveReq> {
 
   @override
   Widget build(BuildContext context) {
+    final title = widget.appTitle;
     return Scaffold(
       appBar: AppBar(
-        title: Text('New Leave Request'),
+        title: Text(title!),
         centerTitle: true,
       ),
       body: Padding(
