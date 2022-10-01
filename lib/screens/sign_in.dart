@@ -62,9 +62,7 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    // print('token: $token');
     return ListView(
-      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
           onTap: getData,
@@ -93,38 +91,7 @@ class _SignInState extends State<SignIn> {
               CustomTextField(
                 title: "Email",
               ),
-              // TextFormField(
-              //   decoration: InputDecoration(
-              //     suffixIcon: GestureDetector(
-              //         onTap: () {
-              //           print('pressed');
-              //           setState(
-              //             () {
-              //               Icon(
-              //                 Icons.remove_red_eye,
-              //                 color: Colors.blue,
-              //               );
-              //             },
-              //           );
-              //           // }, child: Icon(Icons.visibility_off)),
-              //         },
-              //         child: Icon(
-              //           Icons.remove_red_eye_rounded,
-              //           color: Colors.grey,
-              //         )),
-              //     labelText: 'Password',
-              //     focusedBorder: UnderlineInputBorder(
-              //       borderSide: BorderSide(
-              //         color: Color(0xff0ABAB5),
-              //         width: 2,
-              //       ),
-              //     ),
-              //     labelStyle: TextStyle(
-              //       color: Color(0xff0ABAB5),
-              //       fontSize: 20,
-              //     ),
-              //   ),
-              // ),
+           
               CustomTextField(
                 title: 'Password',
                 suffixIcon: GestureDetector(
@@ -138,7 +105,6 @@ class _SignInState extends State<SignIn> {
                           );
                         },
                       );
-                      // }, child: Icon(Icons.visibility_off)),
                     },
                     child: Icon(
                       Icons.remove_red_eye_rounded,
@@ -167,14 +133,7 @@ class _SignInState extends State<SignIn> {
               Button(
                   title: 'Sign In',
                   onPressed: () {
-                    // signIn();
-                    // print('pressed');
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => Profile(),
-                    //   ),
-                    // );
+                
                     Navigator.pushNamed(context, '/clockIn');
                   }),
             ],

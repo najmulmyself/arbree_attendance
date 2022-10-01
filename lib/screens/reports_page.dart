@@ -59,7 +59,6 @@ class _ReportScreenState extends State<ReportScreen> {
             height: 30,
           ),
           DropdownButton(
-            // value: items[0],
             icon: Icon(
               Icons.calendar_today,
             ),
@@ -91,9 +90,7 @@ class _ReportScreenState extends State<ReportScreen> {
                   title: 'Present',
                   number: 22,
                 ),
-                // SizedBox(
-                //   width: 10,
-                // ),
+           
                 RoundedCircle(
                   color: Color(0xffD9F9F2),
                   border: Utils.colorPrimary,
@@ -119,28 +116,7 @@ class _ReportScreenState extends State<ReportScreen> {
             height: 20,
           ),
           Expanded(
-            // child: ListView(
-            //   children: [
-            //     ReportTile(
-            //       date: '30',
-            //     ),
-            //     ReportTile(
-            //       date: '29',
-            //     ),
-            //     ReportTile(
-            //       date: '28',
-            //     ),
-            //     ReportTile(
-            //       date: '27',
-            //     ),
-            //     ReportTile(
-            //       date: '26',
-            //     ),
-            //     ReportTile(
-            //       date: '25',
-            //     ),
-            //   ],
-            // ),
+          
             child: ListView.builder(
               reverse: true,
               itemCount: 30,

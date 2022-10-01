@@ -7,6 +7,7 @@ import 'package:arbree_attendance/screens/leave_overview.dart';
 import 'package:arbree_attendance/screens/notice_board.dart';
 import 'package:arbree_attendance/screens/notification_page.dart';
 import 'package:arbree_attendance/screens/reports_page.dart';
+import 'package:arbree_attendance/screens/team_profile.dart';
 import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -119,7 +120,14 @@ class DrawerContent extends StatelessWidget {
                     icon: FontAwesomeIcons.calendarCheck,
                   ),
                   CustomListTile(
-                    onTap: null,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TeamProfile(),
+                        ),
+                      );
+                    },
                     title: 'Team Profile',
                     icon: FontAwesomeIcons.usersRectangle,
                   ),
