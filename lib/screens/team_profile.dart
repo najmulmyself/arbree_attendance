@@ -2,6 +2,7 @@
 
 import 'package:arbree_attendance/component/icon_rounded_circle.dart';
 import 'package:arbree_attendance/component/rounded_circle.dart';
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class TeamProfile extends StatelessWidget {
@@ -27,9 +28,31 @@ class TeamProfile extends StatelessWidget {
               ),
             ),
           ),
-          IconRoundCircle(
-            hasIcon: false,
-            title: 'Member',
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconRoundCircle(
+                hasIcon: false,
+                title: 'Member',
+                border: Utils.colorPrimary,
+                // color: ,
+              ),
+              IconRoundCircle(
+                hasIcon: false,
+                title: 'Maneger',
+                border: Utils.colorBlue,
+                color: Colors.white,
+              ),
+              IconRoundCircle(
+                hasIcon: false,
+                border: Utils.colorYollow,
+                color: Utils.colorYollowSecondary,
+                title: 'Admin',
+              ),
+            ],
           )
         ],
       ),
