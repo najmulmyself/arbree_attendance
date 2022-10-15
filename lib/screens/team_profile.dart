@@ -1,13 +1,18 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:arbree_attendance/component/icon_rounded_circle.dart';
 import 'package:arbree_attendance/component/rounded_circle.dart';
 import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
-class TeamProfile extends StatelessWidget {
+class TeamProfile extends StatefulWidget {
   const TeamProfile({Key? key}) : super(key: key);
 
+  @override
+  State<TeamProfile> createState() => _TeamProfileState();
+}
+
+class _TeamProfileState extends State<TeamProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,11 +39,21 @@ class TeamProfile extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              IconRoundCircle(
-                hasIcon: false,
-                title: 'Member',
-                border: Utils.colorPrimary,
-                // color: ,
+              GestureDetector(
+                onTap: () {
+                  // setState(() {
+                  print('tapped 1');
+                  // });
+                  Center(
+                    child: Text('HEllo'),
+                  );
+                },
+                child: IconRoundCircle(
+                  hasIcon: false,
+                  title: 'Member',
+                  border: Utils.colorPrimary,
+                  // color: ,
+                ),
               ),
               IconRoundCircle(
                 hasIcon: false,
@@ -53,7 +68,20 @@ class TeamProfile extends StatelessWidget {
                 title: 'Admin',
               ),
             ],
-          )
+          ),
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+              ),
+              itemCount: 2,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  title: Text('Hello'),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );

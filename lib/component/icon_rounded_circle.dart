@@ -30,9 +30,9 @@ class _IconRoundCircleState extends State<IconRoundCircle> {
       children: [
         GestureDetector(
           onTap: () {
-            setState(() {
-              isActive = true;
-            });
+        //     // setState(() {
+        //     //   isActive = !isActive;
+            // });
           },
           child: CircleAvatar(
             radius: widget.hasIcon == true ? 50 : 35,
