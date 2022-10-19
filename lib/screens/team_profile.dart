@@ -77,34 +77,39 @@ class _TeamProfileState extends State<TeamProfile> {
               ),
               itemCount: 2,
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey, width: 2),
-                    borderRadius: BorderRadius.circular(5),
+                return Padding(
+                  padding: EdgeInsets.all(18.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.person,
+                          size: 50,
+                          color: Colors.white,
+                        ),
+                        Text('Name'),
+                        Text('Designation'),
+                        Icon(
+                          Icons.person,
+                          size: 50,
+                          color: Colors.white,
+                        ),
+                        Text('Name'),
+                        Text('Designation'),
+                        Icon(
+                          Icons.person,
+                          size: 50,
+                          color: Colors.white,
+                        ),
+                        Text('Name'),
+                        Text('Designation'),
+                      ],
+                    ),
                   ),
-                  child: Column(children: [
-                    Icon(
-                      Icons.person,
-                      size: 50,
-                      color: Colors.white,
-                    ),
-                    Text('Name'),
-                    Text('Designation'),
-                    Icon(
-                      Icons.person,
-                      size: 50,
-                      color: Colors.white,
-                    ),
-                    Text('Name'),
-                    Text('Designation'),
-                    Icon(
-                      Icons.person,
-                      size: 50,
-                      color: Colors.white,
-                    ),
-                    Text('Name'),
-                    Text('Designation'),
-                  ]),
                 );
               },
             ),
