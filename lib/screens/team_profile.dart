@@ -3,6 +3,7 @@
 import 'package:arbree_attendance/component/icon_rounded_circle.dart';
 import 'package:arbree_attendance/component/rounded_circle.dart';
 import 'package:arbree_attendance/utils/utils.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class TeamProfile extends StatefulWidget {
@@ -73,9 +74,10 @@ class _TeamProfileState extends State<TeamProfile> {
             child: GridView.builder(
               shrinkWrap: true,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-              ),
-              itemCount: 2,
+                  // mainAxisExtent: 350,
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.75),
+              itemCount: 25,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: EdgeInsets.all(18.0),
@@ -84,33 +86,76 @@ class _TeamProfileState extends State<TeamProfile> {
                       border: Border.all(color: Colors.grey, width: 2),
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Container(
-                      child: Expanded(
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.person,
-                              size: 50,
-                              color: Colors.black,
-                            ),
-                            Text('Name'),
-                            Text('Designation'),
-                            Icon(
-                              Icons.person,
-                              size: 50,
-                              color: Colors.black,
-                            ),
-                            Text('data'),
-                            Text('data'),
-                            Text('data'),
-                            Text('data'),
-                            Text('data'),
-                            Text('data'),
-                            Text('data'),
-                            Text('data'),
-                          ],
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 10,
                         ),
-                      ),
+                        Text(
+                          "Paul Smith",
+                          style: TextStyle(
+                            color: Utils.colorPrimary,
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        CircleAvatar(
+                          radius: 27,
+                          backgroundImage:
+                              NetworkImage("https://picsum.photos/200/300"),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 8.0, vertical: 3),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Icon(Icons.star, color: Utils.colorPrimary),
+                              AutoSizeText(
+                                "Software Developer",
+                                maxFontSize: 12,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 8.0, vertical: 3),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Icon(Icons.phone, color: Utils.colorPrimary),
+                              AutoSizeText(
+                                "647-123-4567",
+                                maxFontSize: 12,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 8.0, vertical: 3),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Icon(Icons.email, color: Utils.colorPrimary),
+                              AutoSizeText(
+                                "dev@gmail.com",
+                                maxFontSize: 12,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 );
