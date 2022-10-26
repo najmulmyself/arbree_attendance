@@ -84,30 +84,33 @@ class _TeamProfileState extends State<TeamProfile> {
                       border: Border.all(color: Colors.grey, width: 2),
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.person,
-                          size: 50,
-                          color: Colors.white,
+                    child: Container(
+                      child: Expanded(
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.person,
+                              size: 50,
+                              color: Colors.black,
+                            ),
+                            Text('Name'),
+                            Text('Designation'),
+                            Icon(
+                              Icons.person,
+                              size: 50,
+                              color: Colors.black,
+                            ),
+                            Text('data'),
+                            Text('data'),
+                            Text('data'),
+                            Text('data'),
+                            Text('data'),
+                            Text('data'),
+                            Text('data'),
+                            Text('data'),
+                          ],
                         ),
-                        Text('Name'),
-                        Text('Designation'),
-                        Icon(
-                          Icons.person,
-                          size: 50,
-                          color: Colors.white,
-                        ),
-                        Text('Name'),
-                        Text('Designation'),
-                        Icon(
-                          Icons.person,
-                          size: 50,
-                          color: Colors.white,
-                        ),
-                        Text('Name'),
-                        Text('Designation'),
-                      ],
+                      ),
                     ),
                   ),
                 );
@@ -119,77 +122,3 @@ class _TeamProfileState extends State<TeamProfile> {
     );
   }
 }
-
-
-
-// Padding(
-//                   padding: const EdgeInsets.all(20.0),
-//                   child: SizedBox(
-//                     child: Container(
-//                       decoration: BoxDecoration(
-//                         border: Border.all(color: Colors.grey, width: 2),
-//                         borderRadius: BorderRadius.circular(5),
-//                       ),
-//                       child: Padding(
-//                         padding:
-//                             EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-//                         child: Column(
-//                           crossAxisAlignment: CrossAxisAlignment.center,
-//                           children: [
-//                             Text(
-//                               'Paul Smith',
-//                               style: TextStyle(
-//                                 color: Utils.colorPrimary,
-//                                 // fontSize: 20,
-//                                 fontWeight: FontWeight.bold,
-//                               ),
-//                             ),
-//                             SizedBox(
-//                               height: 10,
-//                             ),
-//                             CircleAvatar(
-//                               radius: 30,
-//                             ),
-//                             SizedBox(
-//                               height: 10,
-//                             ),
-//                             SizedBox(
-//                               height: 10,
-//                             ),
-//                             SizedBox(
-//                               height: 10,
-//                             ),
-//                             SizedBox(
-//                               height: 10,
-//                             ),
-//                             // Expanded(
-//                             //   child: Column(
-//                             //     children: [
-//                             //       Row(
-//                             //         mainAxisAlignment:
-//                             //             MainAxisAlignment.spaceBetween,
-//                             //         children: [
-//                             //           Icon(Icons.phone, color: Colors.red),
-//                             //           Text("notice"),
-//                             //         ],
-//                             //       ),
-//                             //       SizedBox(
-//                             //         height: 10,
-//                             //       ),
-//                             //       Row(
-//                             //         mainAxisAlignment:
-//                             //             MainAxisAlignment.spaceBetween,
-//                             //         children: [
-//                             //           Icon(Icons.phone, color: Colors.red),
-//                             //           Text("notice"),
-//                             //         ],
-//                             //       ),
-//                             //     ],
-//                             //   ),
-//                             // )
-//                           ],
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 );
