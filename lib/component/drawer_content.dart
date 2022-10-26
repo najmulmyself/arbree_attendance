@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:arbree_attendance/component/custom_listtile.dart';
 import 'package:arbree_attendance/screens/leave_overview.dart';
+import 'package:arbree_attendance/screens/my_profile.dart';
 import 'package:arbree_attendance/screens/notice_board.dart';
 import 'package:arbree_attendance/screens/notification_page.dart';
 import 'package:arbree_attendance/screens/reports_page.dart';
@@ -132,7 +133,14 @@ class DrawerContent extends StatelessWidget {
                     icon: FontAwesomeIcons.usersRectangle,
                   ),
                   CustomListTile(
-                    onTap: null,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MyProfile(),
+                        ),
+                      );
+                    },
                     title: 'My Profile',
                     icon: FontAwesomeIcons.user,
                   ),
