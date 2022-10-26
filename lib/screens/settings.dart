@@ -3,6 +3,8 @@
 import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
+import 'about.dart';
+
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
 
@@ -70,15 +72,25 @@ class _SettingsState extends State<Settings> {
               color: Utils.colorBlue,
             ),
           ),
-          ListTile(
-            leading: Icon(
-              Icons.info,
-              color: Utils.colorPrimary,
-            ),
-            title: Text('About'),
-            trailing: Icon(
-              Icons.arrow_forward_ios,
-              color: Utils.colorBlue,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => About(),
+                ),
+              );
+            },
+            child: ListTile(
+              leading: Icon(
+                Icons.info,
+                color: Utils.colorPrimary,
+              ),
+              title: Text('About'),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+                color: Utils.colorBlue,
+              ),
             ),
           ),
           ListTile(
