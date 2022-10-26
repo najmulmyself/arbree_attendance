@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
 
+import 'package:arbree_attendance/screens/help.dart';
 import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -93,15 +94,25 @@ class _SettingsState extends State<Settings> {
               ),
             ),
           ),
-          ListTile(
-            leading: Icon(
-              Icons.question_mark,
-              color: Utils.colorPrimary,
-            ),
-            title: Text('Help'),
-            trailing: Icon(
-              Icons.arrow_forward_ios,
-              color: Utils.colorBlue,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Help(),
+                ),
+              );
+            },
+            child: ListTile(
+              leading: Icon(
+                Icons.question_mark,
+                color: Utils.colorPrimary,
+              ),
+              title: Text('Help'),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+                color: Utils.colorBlue,
+              ),
             ),
           ),
         ],
