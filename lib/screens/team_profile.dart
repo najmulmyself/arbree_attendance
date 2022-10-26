@@ -46,7 +46,7 @@ class _TeamProfileState extends State<TeamProfile> {
                   print('tapped 1');
                   // });
                   Center(
-                    child: Text('HEllo'),
+                    child: Text('Hello'),
                   );
                 },
                 child: IconRoundCircle(
