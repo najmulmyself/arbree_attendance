@@ -146,7 +146,7 @@ class AdminDrawer extends StatelessWidget {
                           color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
-                    ),
+                      ),
                   ],
                 ),
               ),

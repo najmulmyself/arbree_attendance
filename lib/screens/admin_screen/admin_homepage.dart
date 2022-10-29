@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:arbree_attendance/component/admin_component/admin_drawer.dart';
-import 'package:arbree_attendance/utils/utils.dart';
+import 'package:arbree_attendance/screens/admin_screen/admin_reports.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -26,9 +26,17 @@ class AdminHomePage extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          AdminTile(
-            icon: FontAwesomeIcons.listCheck,
-            title: "Attendance Report",
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => AdminReportsScreen()));
+            },
+            child: AdminTile(
+              icon: FontAwesomeIcons.listCheck,
+              title: "Attendance Report",
+            ),
           ),
           AdminTile(
             icon: FontAwesomeIcons.calendarCheck,
