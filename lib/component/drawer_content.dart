@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:arbree_attendance/component/custom_listtile.dart';
+import 'package:arbree_attendance/screens/admin_screen/admin_homepage.dart';
 import 'package:arbree_attendance/screens/leave_overview.dart';
 import 'package:arbree_attendance/screens/my_profile.dart';
 import 'package:arbree_attendance/screens/notice_board.dart';
@@ -165,26 +166,36 @@ class DrawerContent extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: 50,
-              width: double.infinity,
-              color: Utils.colorPrimary,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FaIcon(
-                    FontAwesomeIcons.userAstronaut,
-                    color: Colors.white,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AdminHomePage(),
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text('ADMIN PANEL',
-                      style: GoogleFonts.roboto(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold)),
-                ],
+                );
+              },
+              child: Container(
+                height: 50,
+                width: double.infinity,
+                color: Utils.colorPrimary,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.userAstronaut,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text('ADMIN PANEL',
+                        style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold)),
+                  ],
+                ),
               ),
             ),
           ],
