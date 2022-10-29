@@ -1,6 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:arbree_attendance/component/admin_component/admin_drawer.dart';
+import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../component/admin_component/admin_tile.dart';
 
 class AdminHomePage extends StatelessWidget {
   const AdminHomePage({Key? key}) : super(key: key);
@@ -8,6 +13,9 @@ class AdminHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: AdminDrawer(),
+      ),
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -15,17 +23,28 @@ class AdminHomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ListTileTheme(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Employee'),
-              onTap: () {
-                Navigator.pushNamed(context, '/employee');
-              },
-            ),
+          SizedBox(
+            height: 10,
+          ),
+          AdminTile(
+            icon: FontAwesomeIcons.listCheck,
+            title: "Attendance Report",
+          ),
+          AdminTile(
+            icon: FontAwesomeIcons.calendarCheck,
+            title: "Leave Management",
+          ),
+          AdminTile(
+            title: 'Notice Board',
+            icon: FontAwesomeIcons.clipboard,
+          ),
+          AdminTile(
+            title: "Mange Shift",
+            icon: FontAwesomeIcons.calendarDays,
+          ),
+          AdminTile(
+            title: "Manage Employee",
+            icon: FontAwesomeIcons.userCheck,
           ),
         ],
       ),
