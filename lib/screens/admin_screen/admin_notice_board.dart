@@ -38,6 +38,14 @@ class AdminNoticeBoard extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text('Notice Board'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/admin/newNotice');
+            },
+            icon: Icon(Icons.add),
+          ),
+        ],
       ),
       body: ListView.builder(
         itemCount: notice.length,
@@ -112,12 +120,18 @@ class AdminNoticeBoard extends StatelessWidget {
                             SizedBox(
                               width: 5,
                             ),
-                            Text(
-                              "Edit",
-                              style: TextStyle(
-                                color: Utils.colorPrimary,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, '/admin/newNotice');
+                              },
+                              child: Text(
+                                "Edit",
+                                style: TextStyle(
+                                  color: Utils.colorPrimary,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ],

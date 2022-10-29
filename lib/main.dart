@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:arbree_attendance/screens/admin_screen/admin_new_notice.dart';
 import 'package:arbree_attendance/screens/clock_in.dart';
 import 'package:arbree_attendance/screens/forget_pass.dart';
 import 'package:arbree_attendance/screens/sign_in.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         // '/' :(context) => SignIn(),
         '/forgetpass': (context) => ForgetPass(),
         '/clockIn': (context) => ClockInPage(),
+        '/admin/newNotice': (context) => AdminNewNotice(),
       },
     );
   }
