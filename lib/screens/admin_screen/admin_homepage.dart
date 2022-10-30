@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:arbree_attendance/component/admin_component/admin_drawer.dart';
+import 'package:arbree_attendance/screens/admin_screen/admin_manage_shift.dart';
 import 'package:arbree_attendance/screens/admin_screen/admin_notice_board.dart';
 import 'package:arbree_attendance/screens/admin_screen/admin_reports.dart';
 import 'package:flutter/material.dart';
@@ -59,9 +60,19 @@ class AdminHomePage extends StatelessWidget {
               icon: FontAwesomeIcons.clipboard,
             ),
           ),
-          AdminTile(
-            title: "Mange Shift",
-            icon: FontAwesomeIcons.calendarDays,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AdminManageShift(),
+                ),
+              );
+            },
+            child: AdminTile(
+              title: "Mange Shift",
+              icon: FontAwesomeIcons.calendarDays,
+            ),
           ),
           AdminTile(
             title: "Manage Employee",
