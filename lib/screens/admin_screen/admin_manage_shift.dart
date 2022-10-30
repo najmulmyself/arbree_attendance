@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:arbree_attendance/screens/admin_screen/admin_add_shift.dart';
 import 'package:flutter/material.dart';
 
 import '../../component/admin_component/admin_shift.dart';
-import '../../utils/utils.dart';
 
 class AdminManageShift extends StatelessWidget {
   const AdminManageShift({Key? key}) : super(key: key);
@@ -12,6 +12,21 @@ class AdminManageShift extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AdminAddShift(),
+                ),
+              );
+            },
+            child: Icon(
+              Icons.add,
+            ),
+          ),
+        ],
         elevation: 0,
         centerTitle: true,
         title: Text('Manage Shift'),

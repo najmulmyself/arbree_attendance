@@ -102,7 +102,7 @@ class AdminShift extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/admin/newNotice');
+                          Navigator.pushNamed(context, '/admin/adminAddShift');
                         },
                         child: Text(
                           "Edit",

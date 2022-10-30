@@ -7,6 +7,8 @@ import 'package:arbree_attendance/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'screens/admin_screen/admin_add_shift.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -45,6 +47,7 @@ class MyApp extends StatelessWidget {
         '/forgetpass': (context) => ForgetPass(),
         '/clockIn': (context) => ClockInPage(),
         '/admin/newNotice': (context) => AdminNewNotice(),
+        '/admin/adminAddShift': (context) => AdminAddShift(),
       },
     );
   }
