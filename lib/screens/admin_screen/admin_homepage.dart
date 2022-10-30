@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:arbree_attendance/component/admin_component/admin_drawer.dart';
+import 'package:arbree_attendance/screens/admin_screen/admin_manage_employee.dart';
 import 'package:arbree_attendance/screens/admin_screen/admin_manage_shift.dart';
 import 'package:arbree_attendance/screens/admin_screen/admin_notice_board.dart';
 import 'package:arbree_attendance/screens/admin_screen/admin_reports.dart';
+import 'package:arbree_attendance/screens/team_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -74,9 +76,19 @@ class AdminHomePage extends StatelessWidget {
               icon: FontAwesomeIcons.calendarDays,
             ),
           ),
-          AdminTile(
-            title: "Manage Employee",
-            icon: FontAwesomeIcons.userCheck,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AdminManageEmp(),
+                ),
+              );
+            },
+            child: AdminTile(
+              title: "Manage Employee",
+              icon: FontAwesomeIcons.userCheck,
+            ),
           ),
         ],
       ),

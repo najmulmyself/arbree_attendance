@@ -28,23 +28,7 @@ class _ClockInPageState extends State<ClockInPage> {
       ),
       appBar: AppBar(
         elevation: 0,
-        // leading: Padding(
-        //   padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 8),
-        //   child: FaIcon(
-        //     FontAwesomeIcons.bars,
-        //     color: Colors.white,
-        //     // size: 40,
-        //   ),
-        // // ),
-        // leading: IconButton(
-        //   onPressed: () {
-        //     Scaffold.of(context).openDrawer();
-        //   },
-        //   icon: Icon(
-        //     Icons.menu,
-        //     color: Colors.white,
-        //   ),
-        // ),
+    
 
         title: Text(
           'Arbree Attendance',
