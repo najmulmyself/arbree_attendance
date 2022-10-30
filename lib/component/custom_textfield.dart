@@ -5,12 +5,14 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
+    this.remoteController,
     this.suffixIcon,
     this.hintText,
     required this.title,
     this.readOnly = false,
     this.onTap,
   });
+  final TextEditingController? remoteController;
   final String? title;
   final Widget? suffixIcon;
   final bool readOnly;
@@ -20,6 +22,8 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+     
+      controller: remoteController,
       onTap: onTap ?? null,
       readOnly: readOnly,
       style: TextStyle(),
