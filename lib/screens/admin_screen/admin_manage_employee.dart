@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables
 
 import 'package:arbree_attendance/component/icon_rounded_circle.dart';
+import 'package:arbree_attendance/screens/admin_screen/add_admin.dart';
 import 'package:arbree_attendance/screens/admin_screen/email_invitation.dart';
 import 'package:arbree_attendance/utils/utils.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -27,7 +28,7 @@ class _AdminManageEmpState extends State<AdminManageEmp> {
               showModalBottomSheet(
                 context: context,
                 builder: (context) => SizedBox(
-                  height: 200,
+                  height: 300,
                   child: Column(
                     children: [
                       GestureDetector(
@@ -57,6 +58,22 @@ class _AdminManageEmpState extends State<AdminManageEmp> {
                         },
                         child: ListTile(
                           title: Center(child: Text('By Bulk Invitation')),
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.2,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddAdmin(),
+                            ),
+                          );
+                        },
+                        child: ListTile(
+                          title: Center(child: Text('Add Admin')),
                         ),
                       ),
                       Divider(

@@ -11,9 +11,11 @@ class IconRoundCircle extends StatefulWidget {
     this.border,
     this.hasIcon = true,
     this.title,
+    this.title2,
   });
   final Color? color;
   final String? title;
+  final String? title2;
   final Color? border;
   final bool hasIcon;
 
@@ -30,8 +32,8 @@ class _IconRoundCircleState extends State<IconRoundCircle> {
       children: [
         GestureDetector(
           onTap: () {
-        //     // setState(() {
-        //     //   isActive = !isActive;
+            //     // setState(() {
+            //     //   isActive = !isActive;
             // });
           },
           child: CircleAvatar(
@@ -51,10 +53,21 @@ class _IconRoundCircleState extends State<IconRoundCircle> {
                             color: Utils.colorPrimary,
                             size: 40,
                           )
-                        : AutoSizeText(
-                            widget.title!,
-                            style: TextStyle(color: widget.border),
-                            maxLines: 1,
+                        : Column(
+                            children: [
+                              AutoSizeText(
+                                widget.title!,
+                                style: TextStyle(color: widget.border),
+                                maxLines: 1,
+                              ),
+                              widget.title2 != null
+                                  ? AutoSizeText(
+                                      widget.title2!,
+                                      style: TextStyle(color: widget.border),
+                                      maxLines: 1,
+                                    )
+                                  : Container(),
+                            ],
                           ),
                   ],
                 ),

@@ -104,25 +104,25 @@ class _AdminReportsScreenState extends State<AdminReportsScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 RoundedCircle(
-                  border: Color(0xff374552),
+                  border: Utils.colorBlue,
                   title: 'Present',
                   number: 22,
                 ),
                 RoundedCircle(
-                  color: Color(0xffD9F9F2),
+                  color: Utils.colorPrimaryLight,
                   border: Utils.colorPrimary,
                   title: 'ontime',
                   number: 18,
                 ),
                 RoundedCircle(
-                  color: Color(0xffF8F8C9),
-                  border: Color(0xffFFB636),
+                  color: Utils.colorYollowSecondary,
+                  border: Utils.colorYollow,
                   title: 'late',
                   number: 6,
                 ),
                 RoundedCircle(
-                  color: Color(0xffFAD2D2),
-                  border: Color(0xffF0564A),
+                  color: Utils.colorRedLight,
+                  border: Utils.colorRed,
                   title: 'absent',
                   number: 2,
                 ),

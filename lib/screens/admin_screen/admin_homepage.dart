@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:arbree_attendance/component/admin_component/admin_drawer.dart';
+import 'package:arbree_attendance/screens/admin_screen/admin_leave_managemet.dart';
 import 'package:arbree_attendance/screens/admin_screen/admin_manage_employee.dart';
 import 'package:arbree_attendance/screens/admin_screen/admin_manage_shift.dart';
 import 'package:arbree_attendance/screens/admin_screen/admin_notice_board.dart';
@@ -44,9 +45,19 @@ class AdminHomePage extends StatelessWidget {
               title: "Attendance Report",
             ),
           ),
-          AdminTile(
-            icon: FontAwesomeIcons.calendarCheck,
-            title: "Leave Management",
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AdminLeaveManagement(),
+                ),
+              );
+            },
+            child: AdminTile(
+              icon: FontAwesomeIcons.calendarCheck,
+              title: "Leave Management",
+            ),
           ),
           GestureDetector(
             onTap: () {
