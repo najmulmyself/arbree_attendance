@@ -2,6 +2,7 @@
 
 import 'package:arbree_attendance/component/icon_rounded_circle.dart';
 import 'package:arbree_attendance/component/rounded_circle.dart';
+import 'package:arbree_attendance/screens/admin_screen/leave_setup.dart';
 import 'package:arbree_attendance/utils/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,22 @@ class AdminLeaveManagement extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LeaveSetup(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.settings),
+            ),
+          ),
+        ],
         elevation: 0,
         centerTitle: true,
         title: Text('Leave Management'),
