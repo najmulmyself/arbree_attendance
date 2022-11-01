@@ -224,30 +224,30 @@ class _AdminManageEmpState extends State<AdminManageEmp> {
                             ],
                           ),
                         ),
-                        Container(
-                          width: double.infinity,
-                          height: 46,
-                          decoration: BoxDecoration(
-                            color: Utils.colorBlue,
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(5),
-                              bottomRight: Radius.circular(5),
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.edit,
-                                color: Utils.colorPrimary,
-                              ),
-                              Icon(
-                                Icons.delete,
-                                color: Colors.red,
-                              ),
-                            ],
-                          ),
-                        ),
+                        // Container(
+                        //   width: double.infinity,
+                        //   height: 46,
+                        //   decoration: BoxDecoration(
+                        //     color: Utils.colorBlue,
+                        //     borderRadius: BorderRadius.only(
+                        //       bottomLeft: Radius.circular(5),
+                        //       bottomRight: Radius.circular(5),
+                        //     ),
+                        //   ),
+                        //   child: Row(
+                        //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        //     children: [
+                        //       Icon(
+                        //         Icons.edit,
+                        //         color: Utils.colorPrimary,
+                        //       ),
+                        //       Icon(
+                        //         Icons.delete,
+                        //         color: Colors.red,
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),

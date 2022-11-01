@@ -6,9 +6,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LeaveStatusContainer extends StatelessWidget {
   const LeaveStatusContainer({
-    Key? key,
-  }) : super(key: key);
-
+    this.title = "UPCOMMING LEAVE",
+  });
+  final String? title;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,7 +27,7 @@ class LeaveStatusContainer extends StatelessWidget {
           height: 35,
           width: double.infinity,
           child: Text(
-            'UPCOMING LEAVE',
+            title!,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 15,
